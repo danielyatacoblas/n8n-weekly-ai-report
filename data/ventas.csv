@@ -1,0 +1,1205 @@
+fecha,pedido_id,sku,producto,cantidad,subtotal
+2026-07-06,20001,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-06,20002,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-06,20003,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-06,20003,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-07-06,20004,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-06,20005,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-06,20006,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-06,20007,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-07-06,20008,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-06,20009,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-07-07,20010,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-07,20010,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-07-07,20011,PRE-PRENSA,Prensa francesa 600 ml,2,178.00
+2026-07-07,20012,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-07,20013,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-07,20013,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-07,20014,CAF-DES-250,Café descafeinado 250 g,3,95.70
+2026-07-07,20014,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-07,20015,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-07-07,20015,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-07,20015,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-07,20016,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-07,20016,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-07-08,20017,CAF-DES-250,Café descafeinado 250 g,3,95.70
+2026-07-08,20017,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-08,20017,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-07-08,20018,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-07-08,20018,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-08,20019,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-08,20020,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-08,20020,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-08,20021,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-08,20022,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-07-08,20023,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-08,20024,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-08,20024,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-07-08,20024,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-07-08,20025,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-08,20026,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-08,20026,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-09,20027,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-09,20028,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-09,20029,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-07-09,20030,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-09,20030,PRE-V60,Gotero V60 de cerámica,1,79.00
+2026-07-09,20031,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-09,20032,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-09,20033,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-07-09,20033,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-09,20033,CAF-DES-250,Café descafeinado 250 g,3,95.70
+2026-07-09,20034,ACC-TAZA,Taza de cerámica artesanal,3,135.00
+2026-07-10,20035,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-10,20035,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-10,20036,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-10,20036,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-07-10,20037,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-10,20037,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-07-10,20038,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-07-10,20038,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-10,20039,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-10,20040,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-10,20041,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-07-10,20042,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-10,20042,KIT-REGALO,Kit regalo café + taza,2,238.00
+2026-07-10,20043,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-07-10,20044,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-07-10,20044,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-07-10,20045,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-07-10,20045,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-07-10,20046,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-11,20047,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-11,20047,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-07-11,20048,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-07-11,20049,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-11,20050,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-07-11,20051,PRE-PRENSA,Prensa francesa 600 ml,3,267.00
+2026-07-11,20051,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-11,20052,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-11,20052,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-07-11,20053,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-11,20053,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-11,20053,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-11,20054,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-07-11,20054,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-07-11,20055,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-07-11,20055,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-11,20056,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-07-11,20056,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-11,20057,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-11,20058,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-07-12,20059,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-07-12,20060,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-12,20061,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-07-12,20061,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-12,20062,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-07-12,20062,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-12,20063,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-12,20064,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-12,20065,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-12,20065,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-07-12,20066,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-12,20066,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-12,20067,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-12,20067,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-12,20068,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-12,20069,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-13,20070,CAF-CUS-250,Café Cusco geisha 250 g,3,179.70
+2026-07-13,20071,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-07-13,20071,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-07-13,20071,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-13,20072,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-13,20072,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-13,20072,PRE-V60,Gotero V60 de cerámica,1,79.00
+2026-07-13,20073,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-13,20073,PRE-PRENSA,Prensa francesa 600 ml,3,267.00
+2026-07-13,20074,KIT-REGALO,Kit regalo café + taza,2,238.00
+2026-07-13,20074,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-07-13,20074,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-13,20075,CAF-CUS-250,Café Cusco geisha 250 g,3,179.70
+2026-07-13,20076,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-13,20077,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-13,20077,PRE-V60,Gotero V60 de cerámica,2,158.00
+2026-07-13,20078,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-13,20078,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-13,20079,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-13,20079,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-13,20079,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-07-13,20080,PRE-PRENSA,Prensa francesa 600 ml,2,178.00
+2026-07-13,20080,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-07-14,20081,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-14,20082,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-14,20083,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-14,20083,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-14,20084,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-07-14,20084,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-14,20085,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-14,20085,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-07-14,20085,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-07-14,20086,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-07-14,20087,PRE-V60,Gotero V60 de cerámica,1,79.00
+2026-07-14,20088,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-14,20088,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-07-14,20088,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-15,20089,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-15,20089,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-07-15,20090,KIT-REGALO,Kit regalo café + taza,3,357.00
+2026-07-15,20090,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-15,20090,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-15,20091,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-07-15,20091,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-15,20092,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-07-15,20092,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-15,20093,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-15,20094,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-15,20094,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-15,20094,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-07-15,20095,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-16,20096,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-16,20097,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-07-16,20097,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-07-16,20098,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-16,20098,KIT-REGALO,Kit regalo café + taza,3,357.00
+2026-07-16,20099,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-16,20100,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-16,20100,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-16,20100,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-07-16,20101,CAF-DES-250,Café descafeinado 250 g,3,95.70
+2026-07-16,20102,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-17,20103,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-17,20103,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-17,20103,PRE-V60,Gotero V60 de cerámica,2,158.00
+2026-07-17,20104,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-17,20105,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-17,20105,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-17,20106,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-17,20107,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-17,20107,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-07-17,20108,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-07-17,20108,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-17,20108,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-07-17,20109,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-17,20109,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-07-17,20110,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-17,20111,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-17,20112,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-17,20113,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-17,20114,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-17,20114,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-17,20115,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-18,20116,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-18,20117,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-07-18,20117,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-18,20117,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-18,20118,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-18,20119,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-18,20119,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-18,20120,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-18,20120,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-18,20121,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-18,20122,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-07-18,20123,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-18,20123,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-18,20124,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-18,20125,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-18,20126,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-07-18,20127,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-07-18,20127,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-18,20127,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-18,20128,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-07-18,20128,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-19,20129,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-07-19,20129,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-19,20130,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-19,20130,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-07-19,20131,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-19,20132,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-07-19,20133,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-19,20134,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-19,20134,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-19,20135,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-19,20136,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-19,20136,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-07-19,20136,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-19,20137,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-19,20138,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-19,20139,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-19,20140,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-19,20140,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-07-20,20141,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-07-20,20142,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-20,20143,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-20,20143,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-07-20,20144,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-20,20144,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-07-20,20145,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-20,20145,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-20,20146,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-20,20147,PRE-V60,Gotero V60 de cerámica,2,158.00
+2026-07-20,20147,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-20,20147,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-20,20148,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-20,20148,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-07-20,20148,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-20,20149,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-20,20150,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-20,20150,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-20,20151,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-21,20152,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-07-21,20152,KIT-REGALO,Kit regalo café + taza,3,357.00
+2026-07-21,20153,PRE-V60,Gotero V60 de cerámica,1,79.00
+2026-07-21,20154,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-21,20155,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-21,20155,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-21,20156,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-21,20156,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-07-21,20157,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-21,20158,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-21,20159,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-22,20160,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-07-22,20160,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-22,20161,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-22,20162,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-07-22,20162,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-22,20163,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-22,20163,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-07-22,20164,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-22,20165,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-22,20166,ACC-TAZA,Taza de cerámica artesanal,3,135.00
+2026-07-22,20166,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-22,20167,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-22,20167,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-22,20168,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-07-22,20168,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-22,20168,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-22,20169,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-23,20170,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-07-23,20171,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-23,20171,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-23,20171,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-07-23,20172,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-23,20173,ACC-TAZA,Taza de cerámica artesanal,3,135.00
+2026-07-23,20174,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-07-23,20175,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-23,20176,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-23,20177,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-23,20177,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-23,20178,PRE-PRENSA,Prensa francesa 600 ml,2,178.00
+2026-07-23,20178,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-07-24,20179,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-07-24,20180,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-24,20181,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-24,20181,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-24,20182,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-24,20183,KIT-REGALO,Kit regalo café + taza,2,238.00
+2026-07-24,20183,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-07-24,20184,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-07-24,20184,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-07-24,20185,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-07-24,20185,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-24,20185,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-07-24,20186,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-24,20186,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-24,20187,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-24,20188,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-24,20188,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-24,20189,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-24,20190,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-24,20190,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-24,20190,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-07-24,20191,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-25,20192,CAF-DES-250,Café descafeinado 250 g,3,95.70
+2026-07-25,20193,CAF-DES-250,Café descafeinado 250 g,3,95.70
+2026-07-25,20193,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-25,20194,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-07-25,20194,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-25,20195,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-25,20195,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-07-25,20196,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-25,20197,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-25,20197,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-07-25,20198,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-07-25,20198,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-25,20199,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-25,20199,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-07-25,20200,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-25,20200,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-25,20201,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-25,20201,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-25,20202,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-25,20202,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-25,20202,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-25,20203,PRE-V60,Gotero V60 de cerámica,3,237.00
+2026-07-25,20203,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-25,20204,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-07-25,20204,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-07-25,20205,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-07-25,20205,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-25,20206,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-26,20207,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-26,20207,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-26,20207,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-26,20208,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-26,20208,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-26,20208,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-07-26,20209,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-07-26,20209,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-26,20210,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-07-26,20210,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-26,20211,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-26,20212,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-26,20212,CAF-DES-250,Café descafeinado 250 g,3,95.70
+2026-07-26,20212,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-26,20213,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-07-26,20213,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-26,20214,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-26,20214,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-26,20215,CAF-CUS-250,Café Cusco geisha 250 g,3,179.70
+2026-07-26,20216,KIT-REGALO,Kit regalo café + taza,2,238.00
+2026-07-26,20216,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-26,20216,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-26,20217,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-26,20218,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-26,20218,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-07-26,20218,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-07-27,20219,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-27,20220,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-27,20221,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-27,20222,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-07-27,20222,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-27,20223,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-27,20223,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-27,20223,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-27,20224,CAF-DES-250,Café descafeinado 250 g,3,95.70
+2026-07-27,20224,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-27,20225,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-27,20226,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-27,20226,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-27,20227,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-28,20228,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-28,20228,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-28,20229,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-07-28,20230,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-28,20231,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-07-28,20232,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-28,20233,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-28,20233,PRE-V60,Gotero V60 de cerámica,2,158.00
+2026-07-28,20234,PRE-V60,Gotero V60 de cerámica,3,237.00
+2026-07-28,20234,ACC-TAZA,Taza de cerámica artesanal,3,135.00
+2026-07-28,20234,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-07-28,20235,PRE-V60,Gotero V60 de cerámica,1,79.00
+2026-07-28,20236,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-07-28,20236,CAF-DES-250,Café descafeinado 250 g,3,95.70
+2026-07-29,20237,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-07-29,20238,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-07-29,20238,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-07-29,20239,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-07-29,20240,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-07-29,20240,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-07-29,20240,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-29,20241,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-29,20242,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-29,20242,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-29,20243,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-07-29,20244,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-29,20245,PRE-PRENSA,Prensa francesa 600 ml,2,178.00
+2026-07-29,20245,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-29,20246,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-07-29,20246,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-30,20247,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-30,20247,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-30,20248,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-30,20248,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-30,20249,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-30,20249,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-30,20250,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-07-30,20251,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-07-30,20251,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-30,20252,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-30,20253,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-07-30,20253,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-30,20254,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-30,20254,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-30,20254,KIT-REGALO,Kit regalo café + taza,2,238.00
+2026-07-30,20255,CAF-CUS-250,Café Cusco geisha 250 g,3,179.70
+2026-07-31,20256,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-31,20256,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-07-31,20257,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-07-31,20258,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-31,20259,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-31,20260,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-07-31,20261,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-31,20261,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-31,20262,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-31,20262,KIT-REGALO,Kit regalo café + taza,2,238.00
+2026-07-31,20262,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-31,20263,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-07-31,20263,PRE-V60,Gotero V60 de cerámica,3,237.00
+2026-07-31,20264,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-31,20264,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-07-31,20265,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-07-31,20265,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-07-31,20266,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-07-31,20266,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-01,20267,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-01,20268,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-01,20268,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-01,20269,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-08-01,20269,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-01,20269,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-01,20270,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-01,20270,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-01,20271,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-01,20271,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-01,20272,PRE-V60,Gotero V60 de cerámica,1,79.00
+2026-08-01,20272,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-01,20273,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-01,20273,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-01,20274,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-01,20275,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-01,20276,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-01,20277,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-01,20278,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-08-01,20278,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-01,20278,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-01,20279,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-01,20280,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-08-02,20281,PRE-V60,Gotero V60 de cerámica,1,79.00
+2026-08-02,20281,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-02,20282,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-08-02,20282,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-08-02,20283,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-02,20284,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-02,20284,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-02,20285,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-02,20285,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-02,20286,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-02,20286,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-02,20286,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-08-02,20287,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-02,20287,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-02,20287,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-02,20288,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-02,20289,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-02,20290,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-02,20290,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-02,20291,CAF-CUS-250,Café Cusco geisha 250 g,3,179.70
+2026-08-02,20291,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-08-02,20292,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-02,20293,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-02,20294,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-08-03,20295,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-03,20295,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-03,20295,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-03,20296,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-03,20296,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-08-03,20296,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-03,20297,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-03,20298,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-03,20299,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-03,20300,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-03,20300,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-03,20301,PRE-V60,Gotero V60 de cerámica,1,79.00
+2026-08-03,20301,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-03,20302,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-08-03,20302,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-08-03,20302,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-03,20303,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-03,20303,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-03,20303,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-08-04,20304,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-04,20305,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-08-04,20305,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-04,20306,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-08-04,20307,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-04,20308,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-04,20308,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-04,20309,KIT-REGALO,Kit regalo café + taza,3,357.00
+2026-08-04,20309,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-04,20310,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-08-04,20310,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-04,20311,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-08-04,20311,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-04,20312,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-04,20313,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-04,20313,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-08-05,20314,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-05,20315,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-05,20316,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-05,20316,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-08-05,20316,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-05,20317,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-08-05,20317,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-05,20318,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-05,20319,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-08-05,20320,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-05,20320,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-08-05,20321,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-08-05,20322,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-05,20323,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-06,20324,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-06,20325,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-06,20326,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-06,20326,KIT-REGALO,Kit regalo café + taza,2,238.00
+2026-08-06,20327,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-06,20327,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-08-06,20328,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-06,20328,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-08-06,20329,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-06,20330,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-06,20330,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-08-06,20331,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-06,20332,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-06,20333,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-07,20334,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-07,20334,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-07,20335,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-08-07,20336,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-07,20337,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-08-07,20337,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-07,20337,PRE-V60,Gotero V60 de cerámica,1,79.00
+2026-08-07,20338,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-08-07,20339,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-07,20339,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-08-07,20340,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-07,20340,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-07,20341,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-07,20341,CAF-DES-250,Café descafeinado 250 g,3,95.70
+2026-08-07,20342,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-07,20342,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-07,20342,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-07,20343,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-08,20344,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-08,20344,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-08-08,20345,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-08-08,20346,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-08-08,20346,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-08,20347,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-08,20347,ACC-TAZA,Taza de cerámica artesanal,3,135.00
+2026-08-08,20347,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-08,20348,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-08-08,20348,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-08,20348,CAF-CUS-250,Café Cusco geisha 250 g,3,179.70
+2026-08-08,20349,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-08,20349,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-08-08,20349,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-08,20350,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-08-08,20351,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-08,20352,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-08,20353,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-08,20354,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-08,20354,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-08,20355,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-08,20355,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-08,20356,CAF-DES-250,Café descafeinado 250 g,3,95.70
+2026-08-08,20356,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-08,20356,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-09,20357,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-09,20357,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-09,20358,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-09,20359,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-09,20360,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-09,20360,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-09,20360,PRE-V60,Gotero V60 de cerámica,3,237.00
+2026-08-09,20361,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-09,20362,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-09,20363,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-09,20364,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-09,20364,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-08-09,20364,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-09,20365,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-09,20365,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-09,20366,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-09,20367,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-09,20367,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-09,20368,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-08-09,20369,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-09,20369,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-09,20370,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-09,20370,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-10,20371,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-10,20371,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-10,20372,CAF-CUS-250,Café Cusco geisha 250 g,3,179.70
+2026-08-10,20372,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-10,20372,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-10,20373,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-08-10,20374,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-10,20374,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-08-10,20374,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-10,20375,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-10,20375,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-10,20376,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-10,20377,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-10,20378,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-10,20378,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-10,20379,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-08-10,20379,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-08-11,20380,KIT-REGALO,Kit regalo café + taza,3,357.00
+2026-08-11,20380,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-11,20381,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-11,20382,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-11,20382,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-08-11,20382,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-11,20383,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-08-11,20383,PRE-V60,Gotero V60 de cerámica,1,79.00
+2026-08-11,20383,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-11,20384,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-11,20384,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-11,20385,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-11,20385,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-11,20385,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-08-12,20386,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-08-12,20386,KIT-REGALO,Kit regalo café + taza,2,238.00
+2026-08-12,20387,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-12,20387,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-08-12,20388,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-12,20388,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-12,20389,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-12,20389,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-12,20390,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-12,20390,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-08-12,20390,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-12,20391,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-12,20392,CAF-CUS-250,Café Cusco geisha 250 g,3,179.70
+2026-08-12,20393,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-12,20393,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-12,20394,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-08-12,20394,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-12,20395,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-08-12,20395,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-13,20396,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-13,20397,PRE-V60,Gotero V60 de cerámica,1,79.00
+2026-08-13,20397,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-13,20398,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-13,20399,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-13,20399,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-08-13,20399,KIT-REGALO,Kit regalo café + taza,2,238.00
+2026-08-13,20400,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-13,20400,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-13,20400,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-13,20401,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-13,20402,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-14,20403,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-14,20404,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-08-14,20404,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-08-14,20405,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-08-14,20405,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-14,20405,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-08-14,20406,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-14,20406,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-08-14,20406,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-14,20407,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-08-14,20407,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-08-14,20407,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-14,20408,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-08-14,20408,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-14,20409,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-08-14,20409,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-08-14,20409,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-14,20410,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-08-14,20411,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-14,20412,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-14,20412,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-08-15,20413,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-15,20414,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-15,20414,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-15,20415,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-15,20415,KIT-REGALO,Kit regalo café + taza,2,238.00
+2026-08-15,20416,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-15,20417,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-15,20418,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-15,20419,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-15,20420,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-15,20420,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-08-15,20421,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-15,20421,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-08-15,20422,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-15,20422,KIT-REGALO,Kit regalo café + taza,3,357.00
+2026-08-15,20423,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-15,20424,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-15,20425,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-16,20426,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-16,20427,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-16,20428,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-08-16,20428,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-16,20428,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-16,20429,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-16,20429,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-08-16,20429,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-16,20430,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-16,20431,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-16,20432,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-08-16,20433,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-16,20434,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-16,20434,PRE-V60,Gotero V60 de cerámica,1,79.00
+2026-08-16,20435,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-16,20435,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-16,20436,CAF-DES-250,Café descafeinado 250 g,3,95.70
+2026-08-16,20436,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-16,20437,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-08-16,20437,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-08-17,20438,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-17,20438,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-17,20439,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-17,20440,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-17,20440,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-17,20441,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-17,20441,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-17,20442,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-17,20442,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-08-17,20442,PRE-V60,Gotero V60 de cerámica,1,79.00
+2026-08-17,20443,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-17,20444,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-17,20444,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-18,20445,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-18,20445,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-08-18,20446,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-18,20447,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-08-18,20447,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-08-18,20448,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-18,20449,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-18,20449,PRE-PRENSA,Prensa francesa 600 ml,3,267.00
+2026-08-18,20450,PRE-V60,Gotero V60 de cerámica,2,158.00
+2026-08-19,20451,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-19,20452,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-19,20452,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-19,20452,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-19,20453,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-19,20454,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-19,20455,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-19,20455,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-19,20456,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-08-19,20456,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-08-19,20457,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-19,20457,PRE-V60,Gotero V60 de cerámica,2,158.00
+2026-08-19,20457,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-19,20458,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-20,20459,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-20,20460,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-08-20,20460,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-08-20,20461,PRE-V60,Gotero V60 de cerámica,2,158.00
+2026-08-20,20461,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-20,20462,ACC-TAZA,Taza de cerámica artesanal,3,135.00
+2026-08-20,20463,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-20,20464,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-20,20464,CAF-CUS-250,Café Cusco geisha 250 g,3,179.70
+2026-08-20,20465,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-20,20465,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-20,20466,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-20,20466,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-21,20467,PRE-V60,Gotero V60 de cerámica,2,158.00
+2026-08-21,20468,PRE-V60,Gotero V60 de cerámica,1,79.00
+2026-08-21,20469,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-08-21,20470,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-21,20471,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-21,20471,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-21,20472,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-08-21,20473,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-21,20473,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-08-21,20474,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-21,20474,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-21,20474,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-21,20475,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-21,20476,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-21,20476,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-21,20476,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-21,20477,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-21,20477,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-08-22,20478,CAF-CUS-250,Café Cusco geisha 250 g,3,179.70
+2026-08-22,20479,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-22,20480,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-08-22,20481,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-08-22,20481,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-22,20482,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-22,20483,PRE-V60,Gotero V60 de cerámica,3,237.00
+2026-08-22,20484,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-22,20485,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-22,20486,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-22,20486,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-08-22,20487,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-22,20487,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-22,20488,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-22,20488,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-08-22,20489,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-23,20490,ACC-TAZA,Taza de cerámica artesanal,3,135.00
+2026-08-23,20490,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-23,20491,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-23,20491,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-23,20492,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-08-23,20492,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-08-23,20493,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-23,20493,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-23,20494,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-23,20495,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-23,20495,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-23,20496,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-08-23,20497,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-23,20497,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-23,20498,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-08-23,20498,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-23,20498,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-23,20499,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-23,20500,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-08-23,20500,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-23,20501,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-23,20501,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-23,20502,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-24,20503,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-24,20503,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-08-24,20504,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-24,20505,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-24,20505,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-24,20505,PRE-PRENSA,Prensa francesa 600 ml,3,267.00
+2026-08-24,20506,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-24,20507,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-24,20508,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-24,20508,ACC-TAZA,Taza de cerámica artesanal,3,135.00
+2026-08-24,20508,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-24,20509,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-08-24,20509,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-24,20510,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-24,20510,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-24,20510,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-24,20511,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-24,20511,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-24,20511,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-08-24,20512,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-08-24,20512,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-24,20513,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-08-25,20514,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-25,20514,CAF-CUS-250,Café Cusco geisha 250 g,3,179.70
+2026-08-25,20515,CAF-DES-250,Café descafeinado 250 g,3,95.70
+2026-08-25,20515,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-08-25,20515,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-25,20516,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-25,20516,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-08-25,20517,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-25,20518,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-25,20518,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-25,20519,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-25,20519,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-08-25,20520,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-08-25,20521,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-25,20522,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-26,20523,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-26,20524,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-26,20525,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-26,20525,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-26,20525,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-26,20526,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-26,20527,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-26,20527,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-26,20528,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-08-26,20529,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-26,20529,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-08-27,20530,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-27,20530,PRE-PRENSA,Prensa francesa 600 ml,3,267.00
+2026-08-27,20531,ACC-TAZA,Taza de cerámica artesanal,3,135.00
+2026-08-27,20532,PRE-V60,Gotero V60 de cerámica,1,79.00
+2026-08-27,20532,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-27,20533,PRE-V60,Gotero V60 de cerámica,3,237.00
+2026-08-27,20533,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-27,20534,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-27,20534,KIT-REGALO,Kit regalo café + taza,3,357.00
+2026-08-27,20534,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-27,20535,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-08-27,20535,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-27,20536,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-27,20537,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-08-27,20537,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-08-28,20538,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-28,20539,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-28,20540,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-08-28,20540,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-08-28,20541,PRE-V60,Gotero V60 de cerámica,3,237.00
+2026-08-28,20541,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-08-28,20541,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-28,20542,PRE-V60,Gotero V60 de cerámica,2,158.00
+2026-08-28,20543,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-08-28,20543,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-08-28,20543,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-28,20544,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-28,20545,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-08-28,20546,CAF-CUS-250,Café Cusco geisha 250 g,3,179.70
+2026-08-28,20547,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-28,20547,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-08-28,20548,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-28,20549,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-28,20549,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-29,20550,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-29,20550,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-29,20550,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-08-29,20551,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-29,20551,PRE-V60,Gotero V60 de cerámica,1,79.00
+2026-08-29,20551,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-29,20552,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-29,20552,PRE-PRENSA,Prensa francesa 600 ml,2,178.00
+2026-08-29,20553,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-29,20553,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-29,20553,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-29,20554,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-08-29,20555,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-29,20556,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-08-29,20556,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-08-29,20557,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-08-29,20558,PRE-V60,Gotero V60 de cerámica,2,158.00
+2026-08-29,20558,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-29,20558,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-29,20559,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-08-29,20559,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-29,20559,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-29,20560,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-29,20561,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-08-29,20562,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-08-29,20562,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-08-29,20562,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-30,20563,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-08-30,20563,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-30,20563,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-30,20564,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-08-30,20565,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-30,20565,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-08-30,20565,CAF-CUS-250,Café Cusco geisha 250 g,3,179.70
+2026-08-30,20566,CAF-CUS-250,Café Cusco geisha 250 g,3,179.70
+2026-08-30,20567,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-30,20568,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-30,20568,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-08-30,20569,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-08-30,20569,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-30,20570,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-30,20571,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-30,20571,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-08-30,20572,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-30,20572,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-08-30,20573,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-31,20574,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-08-31,20575,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-08-31,20575,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-08-31,20576,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-08-31,20576,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-08-31,20577,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-31,20577,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-31,20578,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-08-31,20578,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-08-31,20579,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-08-31,20579,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-08-31,20580,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-01,20581,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-09-01,20582,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-01,20582,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-09-01,20583,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-09-01,20584,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-09-01,20584,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-09-01,20584,CAF-DES-250,Café descafeinado 250 g,3,95.70
+2026-09-01,20585,PRE-PRENSA,Prensa francesa 600 ml,3,267.00
+2026-09-01,20586,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-01,20586,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-09-01,20587,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-09-01,20588,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-01,20588,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-02,20589,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-02,20590,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-02,20590,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-09-02,20591,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-02,20592,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-02,20593,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-02,20594,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-02,20595,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-09-03,20596,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-09-03,20596,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-03,20597,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-09-03,20597,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-09-03,20597,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-09-03,20598,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-03,20598,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-09-03,20599,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-09-03,20599,CAF-DES-250,Café descafeinado 250 g,3,95.70
+2026-09-03,20600,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-03,20601,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-09-03,20602,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-09-03,20603,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-09-03,20604,PRE-V60,Gotero V60 de cerámica,3,237.00
+2026-09-03,20604,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-09-03,20605,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-03,20606,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-03,20606,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-09-04,20607,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-09-04,20608,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-04,20609,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-09-04,20610,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-09-04,20610,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-04,20611,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-09-04,20611,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-09-04,20612,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-04,20613,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-04,20614,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-09-04,20614,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-04,20614,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-04,20615,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-04,20615,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-09-04,20616,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-05,20617,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-09-05,20617,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-09-05,20618,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-05,20619,PRE-PRENSA,Prensa francesa 600 ml,3,267.00
+2026-09-05,20619,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-09-05,20620,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-09-05,20620,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-05,20621,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-09-05,20622,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-05,20623,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-05,20623,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-09-05,20624,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-05,20625,PRE-V60,Gotero V60 de cerámica,2,158.00
+2026-09-05,20625,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-05,20625,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-09-05,20626,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-05,20627,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-09-05,20627,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-09-05,20627,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-05,20628,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-09-05,20628,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-09-05,20629,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-09-05,20629,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-09-05,20629,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-09-05,20630,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-09-05,20631,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-09-05,20631,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-05,20631,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-09-06,20632,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-06,20632,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-09-06,20632,PRE-PRENSA,Prensa francesa 600 ml,2,178.00
+2026-09-06,20633,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-06,20633,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-06,20634,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-06,20634,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-09-06,20634,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-09-06,20635,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-09-06,20636,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-06,20637,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-06,20637,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-09-06,20638,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-09-06,20639,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-09-06,20640,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-06,20640,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-09-06,20641,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-09-06,20642,PRE-PRENSA,Prensa francesa 600 ml,2,178.00
+2026-09-06,20643,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-09-06,20644,KIT-REGALO,Kit regalo café + taza,3,357.00
+2026-09-07,20645,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-09-07,20646,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-07,20647,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-07,20647,PRE-V60,Gotero V60 de cerámica,3,237.00
+2026-09-07,20648,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-07,20648,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-07,20649,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-09-07,20649,ACC-FILTROS,Filtros de papel x100,3,59.70
+2026-09-07,20649,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-07,20650,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-07,20650,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-09-07,20650,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-07,20651,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-09-07,20651,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-08,20652,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-09-08,20652,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-08,20653,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-09-08,20654,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-09-08,20655,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-09-08,20656,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-09-08,20656,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-08,20656,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-08,20657,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-09-08,20657,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-08,20658,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-09-08,20658,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-08,20659,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-08,20659,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-08,20660,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-09-08,20661,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-08,20661,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-08,20661,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-09,20662,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-09-10,20663,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-10,20663,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-09-10,20663,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-10,20664,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-10,20664,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-10,20665,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-10,20665,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-10,20666,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-09-10,20666,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-10,20667,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-09-10,20667,CAF-VRS-1K,Café Villa Rica tostado 1 kg,3,297.00
+2026-09-10,20667,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-09-10,20668,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-09-10,20669,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-09-10,20669,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-10,20669,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-11,20670,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-11,20671,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-11,20672,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-09-11,20672,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-11,20672,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-11,20673,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-09-11,20673,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-09-11,20673,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-11,20674,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-09-11,20675,KIT-REGALO,Kit regalo café + taza,3,357.00
+2026-09-11,20676,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-11,20677,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-09-11,20677,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-09-11,20678,CAF-DES-250,Café descafeinado 250 g,2,63.80
+2026-09-11,20678,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-11,20678,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-09-11,20679,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-09-11,20679,CAF-CUS-250,Café Cusco geisha 250 g,3,179.70
+2026-09-11,20680,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-11,20680,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-12,20681,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-12,20682,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-12,20683,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-09-12,20683,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-12,20684,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-12,20685,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-09-12,20686,ACC-FILTROS,Filtros de papel x100,1,19.90
+2026-09-12,20686,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-12,20686,PRE-V60,Gotero V60 de cerámica,3,237.00
+2026-09-12,20687,CAF-CUS-250,Café Cusco geisha 250 g,2,119.80
+2026-09-12,20687,CAF-VRS-250,Café Villa Rica tostado 250 g,3,86.70
+2026-09-12,20688,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-12,20688,CAF-DES-250,Café descafeinado 250 g,1,31.90
+2026-09-12,20689,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-09-12,20690,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-12,20690,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-12,20691,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-12,20691,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-12,20691,ACC-TAZA,Taza de cerámica artesanal,1,45.00
+2026-09-12,20692,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-12,20692,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-12,20693,PRE-V60,Gotero V60 de cerámica,2,158.00
+2026-09-12,20693,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-12,20693,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-09-12,20694,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-12,20694,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-13,20695,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-09-13,20695,CAF-CUS-250,Café Cusco geisha 250 g,1,59.90
+2026-09-13,20695,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-13,20696,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-13,20697,CAF-VRS-1K,Café Villa Rica tostado 1 kg,2,198.00
+2026-09-13,20697,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-13,20697,ACC-TAZA,Taza de cerámica artesanal,2,90.00
+2026-09-13,20698,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-09-13,20698,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-13,20699,CAF-VRS-250,Café Villa Rica tostado 250 g,1,28.90
+2026-09-13,20699,ACC-FILTROS,Filtros de papel x100,2,39.80
+2026-09-13,20700,KIT-REGALO,Kit regalo café + taza,1,119.00
+2026-09-13,20701,CAF-CHA-250,Café Chanchamayo orgánico 250 g,2,65.80
+2026-09-13,20701,KIT-REGALO,Kit regalo café + taza,2,238.00
+2026-09-13,20702,CAF-VRS-250,Café Villa Rica tostado 250 g,2,57.80
+2026-09-13,20702,PRE-PRENSA,Prensa francesa 600 ml,1,89.00
+2026-09-13,20702,CAF-VRS-1K,Café Villa Rica tostado 1 kg,1,99.00
+2026-09-13,20703,CAF-CUS-250,Café Cusco geisha 250 g,3,179.70
+2026-09-13,20703,CAF-CHA-250,Café Chanchamayo orgánico 250 g,3,98.70
+2026-09-13,20704,CAF-CHA-250,Café Chanchamayo orgánico 250 g,1,32.90
+2026-09-13,20704,ACC-TAZA,Taza de cerámica artesanal,2,90.00
