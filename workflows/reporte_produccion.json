@@ -1,0 +1,414 @@
+{
+  "id": "reporteprod",
+  "name": "Reporte semanal · producción",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 * * 1"
+            }
+          ]
+        }
+      },
+      "id": "cron-1",
+      "name": "Lunes 8:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        300
+      ],
+      "notes": "Usa la zona horaria de n8n (GENERIC_TIMEZONE=America/Lima)."
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "REEMPLAZAR_ID_HOJA",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Ventas",
+          "mode": "name"
+        },
+        "options": {}
+      },
+      "id": "gs-v",
+      "name": "Sheets · Ventas",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        220,
+        300
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "REEMPLAZAR_ID_HOJA",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Publicidad",
+          "mode": "name"
+        },
+        "options": {}
+      },
+      "id": "gs-p",
+      "name": "Sheets · Publicidad",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        440,
+        300
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "REEMPLAZAR_ID_HOJA",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Conversaciones",
+          "mode": "name"
+        },
+        "options": {}
+      },
+      "id": "gs-c",
+      "name": "Sheets · Conversaciones",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        660,
+        300
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "REEMPLAZAR_ID_HOJA",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Facturas",
+          "mode": "name"
+        },
+        "options": {}
+      },
+      "id": "gs-f",
+      "name": "Sheets · Facturas",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        880,
+        300
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Nodos Code de n8n: \"Calcular métricas\" y \"Verificar y armar el reporte\".\n// Espejo en JavaScript de src/reporte.py (misma lógica, misma salida).\n// La paridad entre ambos la verifica tests/test_paridad_js.py.\n//\n// scripts/build_workflow.py fija los marcadores:\n//   MODO    'metricas' → lee las hojas y calcula;  'resumen' → verifica el texto\n//           de la IA y arma el correo\n//   FUENTE  'demo' (datos incluidos en el nodo) o 'sheets' (producción)\n//   DATOS_DEMO  data/*.csv comprimidos (solo en la demo)\n\nconst MODO = 'metricas';\nconst FUENTE = 'sheets';\nconst DATOS_DEMO = {};\n\nconst NEGOCIO = 'Tostaduría Selva Alta';\nconst DIAS = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];\nconst SEMANAS_HISTORIA = 8;\nconst UMBRAL_Z = 2;\nconst META_ROAS = 200;\nconst META_BOT = 700;\nconst CAMBIO_RELEVANTE = 100;\nconst ALZA_GASTO = 200;\nconst NUMERO = /\\d[\\d,]*(?:\\.\\d+)?/g;\n\n// ── números ──\n\nfunction centimos(v) {\n  const t = String(v === null || v === undefined ? '' : v).trim().replace(/,/g, '');\n  const m = t.match(/^(-?)(\\d+)(?:\\.(\\d{1,2}))?$/);\n  if (!m) return 0;\n  const valor = parseInt(m[2], 10) * 100 + parseInt((m[3] || '').padEnd(2, '0'), 10);\n  return m[1] ? -valor : valor;\n}\n\nfunction entero(v) {\n  const t = String(v === null || v === undefined ? '' : v).trim();\n  return /^-?\\d+$/.test(t) ? parseInt(t, 10) : 0;\n}\n\nfunction redondear(num, den) {\n  const signo = (num < 0) !== (den < 0) ? -1 : 1;\n  return signo * Math.floor((2 * Math.abs(num) + Math.abs(den)) / (2 * Math.abs(den)));\n}\n\nconst miles = (n) => String(n).replace(/\\B(?=(\\d{3})+(?!\\d))/g, ',');\n\nfunction soles(c) {\n  const signo = c < 0 ? '-' : '';\n  const a = Math.abs(c);\n  return `${signo}S/ ${miles(Math.floor(a / 100))}.${String(a % 100).padStart(2, '0')}`;\n}\n\nfunction decimas(d) {\n  const signo = d < 0 ? '-' : '';\n  return `${signo}${Math.floor(Math.abs(d) / 10)}.${Math.abs(d) % 10}`;\n}\n\nconst centesimas = (c) => `${Math.floor(c / 100)}.${String(c % 100).padStart(2, '0')}`;\n\nconst variacion = (actual, anterior) =>\n  anterior === 0 ? null : redondear((actual - anterior) * 1000, anterior);\n\n// ── fechas ──\n\nconst dia = (s) => Date.UTC(+s.slice(0, 4), +s.slice(5, 7) - 1, +s.slice(8, 10)) / 86400000;\nconst iso = (n) => new Date(n * 86400000).toISOString().slice(0, 10);\n\nfunction semanaAnterior(fechaRef) {\n  const d = dia(fechaRef);\n  const lunes = d - (new Date(d * 86400000).getUTCDay() + 6) % 7;\n  return [iso(lunes - 7), iso(lunes - 1)];\n}\n\nconst ddmm = (f) => `${f.slice(8, 10)}/${f.slice(5, 7)}`;\n\n// ── métricas ──\n\nfunction en(fila, ini, fin) {\n  const f = String(fila.fecha || '').slice(0, 10);\n  return ini <= f && f <= fin;\n}\n\nfunction resumenVentas(filas, ini, fin) {\n  const sel = filas.filter((f) => en(f, ini, fin));\n  const ingresos = sel.reduce((s, f) => s + centimos(f.subtotal), 0);\n  const pedidos = new Set(sel.map((f) => String(f.pedido_id))).size;\n  return { ingresos, pedidos, ticket: pedidos ? redondear(ingresos, pedidos) : 0 };\n}\n\nfunction ingresosPorDia(filas) {\n  const porDia = {};\n  for (const f of filas) {\n    const k = String(f.fecha || '').slice(0, 10);\n    porDia[k] = (porDia[k] || 0) + centimos(f.subtotal);\n  }\n  return porDia;\n}\n\nfunction calcular(datos, fechaRef) {\n  const [ini, fin] = semanaAnterior(fechaRef);\n  const [iniA, finA] = [iso(dia(ini) - 7), iso(dia(fin) - 7)];\n  const ventas = datos.ventas || [];\n\n  const actual = resumenVentas(ventas, ini, fin);\n  const anterior = resumenVentas(ventas, iniA, finA);\n  const porDia = ingresosPorDia(ventas);\n  const dias = DIAS.map((nombre, i) => ({\n    fecha: iso(dia(ini) + i), dia: nombre, ingresos: porDia[iso(dia(ini) + i)] || 0,\n  }));\n\n  const productos = {};\n  for (const f of ventas) {\n    if (!en(f, ini, fin)) continue;\n    const k = String(f.producto || f.sku || '?');\n    productos[k] = productos[k] || { ingresos: 0, unidades: 0 };\n    productos[k].ingresos += centimos(f.subtotal);\n    productos[k].unidades += entero(f.cantidad);\n  }\n  const top = Object.entries(productos)\n    .sort((a, b) => (b[1].ingresos - a[1].ingresos) || (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0))\n    .slice(0, 3)\n    .map(([producto, v]) => ({ producto, ingresos: v.ingresos, unidades: v.unidades }));\n\n  const pub = (datos.publicidad || []).filter((f) => en(f, ini, fin));\n  const pubA = (datos.publicidad || []).filter((f) => en(f, iniA, finA));\n  const gasto = pub.reduce((s, f) => s + centimos(f.gasto), 0);\n  const gastoA = pubA.reduce((s, f) => s + centimos(f.gasto), 0);\n\n  const conv = (datos.conversaciones || []).filter((f) => en(f, ini, fin));\n  const convA = (datos.conversaciones || []).filter((f) => en(f, iniA, finA));\n  const atendidas = conv.filter((f) => f.accion !== 'silencio');\n  const resueltas = atendidas.filter((f) => f.accion === 'responder' && f.intencion !== 'aclarar');\n\n  const fac = (datos.facturas || []).filter((f) => en(f, ini, fin));\n  const registradas = fac.filter((f) => f.estado === 'registrada');\n\n  return {\n    semana: { inicio: ini, fin },\n    ventas: Object.assign({}, actual, {\n      anterior,\n      cambio_ingresos: variacion(actual.ingresos, anterior.ingresos),\n      cambio_pedidos: variacion(actual.pedidos, anterior.pedidos),\n      cambio_ticket: variacion(actual.ticket, anterior.ticket),\n      por_dia: dias,\n      top,\n    }),\n    publicidad: {\n      gasto, cambio_gasto: variacion(gasto, gastoA),\n      clics: pub.reduce((s, f) => s + entero(f.clics), 0),\n      roas: gasto ? redondear(actual.ingresos * 100, gasto) : null,\n      costo_por_pedido: actual.pedidos ? redondear(gasto, actual.pedidos) : null,\n    },\n    atencion: {\n      conversaciones: conv.length, cambio: variacion(conv.length, convA.length),\n      resueltas_bot: resueltas.length,\n      tasa_bot: atendidas.length ? redondear(resueltas.length * 1000, atendidas.length) : null,\n      derivadas: conv.filter((f) => f.accion === 'derivar').length,\n      sin_respuesta: conv.filter((f) => f.intencion === 'aclarar').length,\n    },\n    facturas: {\n      registradas: registradas.length,\n      total: registradas.reduce((s, f) => s + centimos(f.total), 0),\n      revision: fac.filter((f) => f.estado === 'revision').length,\n    },\n    anomalias: anomalias(porDia, ini),\n  };\n}\n\nfunction anomalias(porDia, ini) {\n  const salida = [];\n  for (let i = 0; i < 7; i++) {\n    const d = dia(ini) + i;\n    const x = porDia[iso(d)] || 0;\n    const hist = [];\n    for (let k = 1; k <= SEMANAS_HISTORIA; k++) hist.push(porDia[iso(d - 7 * k)] || 0);\n    const n = hist.length;\n    const suma = hist.reduce((s, h) => s + h, 0);\n    const dispersion = n * hist.reduce((s, h) => s + h * h, 0) - suma * suma;\n    if (dispersion <= 0) continue;\n    const z = (x * n - suma) / Math.sqrt(dispersion);\n    if (Math.abs(z) >= UMBRAL_Z) {\n      salida.push({ fecha: iso(d), dia: DIAS[i], ingresos: x,\n                    promedio: redondear(suma, n), tipo: z < 0 ? 'baja' : 'alta' });\n    }\n  }\n  return salida;\n}\n\n// ── hallazgos y texto ──\n\nfunction cambioTexto(c) {\n  return c === null ? 'sin dato de la semana anterior'\n    : `${c >= 0 ? '+' : ''}${decimas(c)} % frente a la semana anterior`;\n}\n\nfunction hallazgos(m) {\n  const { ventas: v, publicidad: pub, atencion: at, facturas: fac } = m;\n  const out = [];\n  const c = v.cambio_ingresos;\n  if (c !== null && Math.abs(c) >= CAMBIO_RELEVANTE) {\n    out.push(`Las ventas ${c > 0 ? 'subieron' : 'bajaron'} ${decimas(Math.abs(c))} % ` +\n      `frente a la semana anterior (${soles(v.ingresos)} contra ${soles(v.anterior.ingresos)}).`);\n  }\n  for (const a of m.anomalias) {\n    const nivel = a.tipo === 'baja' ? 'por debajo' : 'por encima';\n    const extra = a.tipo === 'baja'\n      ? ' Conviene revisar si la web o los pagos tuvieron problemas ese día.' : '';\n    out.push(`El ${a.dia} ${ddmm(a.fecha)} se vendió ${soles(a.ingresos)}, muy ` +\n      `${nivel} de lo normal para un ${a.dia} (promedio ${soles(a.promedio)}).${extra}`);\n  }\n  const cg = pub.cambio_gasto;\n  if (cg !== null && cg >= ALZA_GASTO && (c === null || c <= 0)) {\n    out.push(`El gasto en publicidad subió ${decimas(cg)} % (${soles(pub.gasto)}), pero ` +\n      `las ventas no acompañaron (${cambioTexto(c)}). Conviene revisar qué campaña cambió.`);\n  }\n  if (pub.roas !== null && pub.roas < META_ROAS) {\n    out.push(`La publicidad devolvió ${centesimas(pub.roas)} soles en ventas por cada ` +\n      `sol invertido, por debajo de la meta de ${centesimas(META_ROAS)}.`);\n  }\n  if (at.tasa_bot !== null && at.tasa_bot < META_BOT) {\n    out.push(`El bot resolvió el ${decimas(at.tasa_bot)} % de las consultas, por debajo ` +\n      `de la meta de ${decimas(META_BOT)} %.`);\n  }\n  if (at.sin_respuesta >= 3) {\n    out.push(`${at.sin_respuesta} preguntas de clientes no encontraron respuesta en la ` +\n      'base del bot: conviene agregarlas a las preguntas frecuentes.');\n  }\n  if (fac.revision) {\n    const varias = fac.revision > 1;\n    out.push(`${fac.revision} factura${varias ? 's' : ''} de proveedores ` +\n      `${varias ? 'esperan' : 'espera'} revisión.`);\n  }\n  if (v.top.length) {\n    const t = v.top[0];\n    out.push(`El producto que más vendió fue ${t.producto}: ${soles(t.ingresos)} ` +\n      `en ${t.unidades} unidades.`);\n  }\n  return out;\n}\n\nfunction hechos(m, lista) {\n  const { ventas: v, publicidad: pub, atencion: at, facturas: fac } = m;\n  const lineas = [\n    `Semana: del ${ddmm(m.semana.inicio)} al ${ddmm(m.semana.fin)}`,\n    `Ventas: ${soles(v.ingresos)} (${cambioTexto(v.cambio_ingresos)})`,\n    `Pedidos: ${v.pedidos} (${cambioTexto(v.cambio_pedidos)})`,\n    `Ticket promedio: ${soles(v.ticket)} (${cambioTexto(v.cambio_ticket)})`,\n    `Gasto en publicidad: ${soles(pub.gasto)} (${cambioTexto(pub.cambio_gasto)})`,\n  ];\n  if (pub.roas !== null) lineas.push(`Ventas por sol invertido en publicidad: ${centesimas(pub.roas)}`);\n  if (pub.costo_por_pedido !== null) lineas.push(`Costo de publicidad por pedido: ${soles(pub.costo_por_pedido)}`);\n  lineas.push(`Conversaciones con clientes: ${at.conversaciones} (${cambioTexto(at.cambio)})`);\n  if (at.tasa_bot !== null) lineas.push(`Resueltas por el bot: ${at.resueltas_bot} (${decimas(at.tasa_bot)} %)`);\n  lineas.push(`Derivadas a una persona: ${at.derivadas}`);\n  lineas.push(`Facturas registradas: ${fac.registradas} por ${soles(fac.total)}; ` +\n    `en revisión: ${fac.revision}`);\n  lineas.push('Hallazgos:');\n  for (const h of lista) lineas.push(`- ${h}`);\n  return lineas.join('\\n');\n}\n\nfunction plantilla(m, lista) {\n  const v = m.ventas;\n  const inicio = `Semana del ${ddmm(m.semana.inicio)} al ${ddmm(m.semana.fin)}: ` +\n    `ventas de ${soles(v.ingresos)} en ${v.pedidos} pedidos.`;\n  return [inicio].concat(lista.slice(0, 3)).join(' ');\n}\n\n// ── verificación del texto de la IA ──\n\nfunction normalizarNumero(n) {\n  const s = n.replace(/,/g, '');\n  const punto = s.indexOf('.');\n  let entera = punto === -1 ? s : s.slice(0, punto);\n  let dec = punto === -1 ? '' : s.slice(punto + 1);\n  entera = entera.replace(/^0+/, '') || '0';\n  dec = dec.replace(/0+$/, '');\n  return dec ? `${entera}.${dec}` : entera;\n}\n\nfunction verificar(texto, base) {\n  const permitidas = new Set((base.match(NUMERO) || []).map(normalizarNumero));\n  for (let i = 0; i <= 10; i++) permitidas.add(String(i));\n  const ajenas = [];\n  for (const n of ((texto || '').match(NUMERO) || [])) {\n    if (!permitidas.has(normalizarNumero(n)) && !ajenas.includes(n)) ajenas.push(n);\n  }\n  return { ok: Boolean((texto || '').trim()) && !ajenas.length, cifras_ajenas: ajenas };\n}\n\nfunction resumenFinal(textoIa, m, lista) {\n  const base = hechos(m, lista);\n  if (textoIa === null || textoIa === undefined) {\n    return { texto: plantilla(m, lista), origen: 'plantilla',\n             motivo: 'la IA no respondió', cifras_ajenas: [] };\n  }\n  const v = verificar(textoIa, base);\n  if (v.ok) return { texto: textoIa.trim(), origen: 'ia', motivo: '', cifras_ajenas: [] };\n  const motivo = !v.cifras_ajenas.length ? 'la IA devolvió un texto vacío'\n    : 'la IA mencionó cifras que no están en los datos: ' + v.cifras_ajenas.join(', ');\n  return { texto: plantilla(m, lista), origen: 'plantilla', motivo, cifras_ajenas: v.cifras_ajenas };\n}\n\n// ── correo HTML (tablas y estilos en línea: es lo que entienden los clientes de correo) ──\n\nconst esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')\n  .replace(/>/g, '&gt;').replace(/\"/g, '&quot;');\n\nfunction armarHtml(m, lista, resumen) {\n  const { ventas: v, publicidad: pub, atencion: at } = m;\n  // invertir: en publicidad, gastar más es la mala noticia\n  const color = (c, invertir) => c === null || c === 0 ? '#6b7480'\n    : (c > 0) !== invertir ? '#1f8a4c' : '#b3261e';\n  const kpi = (titulo, valor, c, invertir = false) => `\n    <td style=\"padding:12px;border:1px solid #e3e6ea;border-radius:8px;width:20%;vertical-align:top\">\n      <div style=\"font-size:12px;color:#6b7480\">${esc(titulo)}</div>\n      <div style=\"font-size:20px;font-weight:700;margin:4px 0\">${esc(valor)}</div>\n      <div style=\"font-size:12px;color:${color(c, invertir)}\">${c === null ? 'sin dato previo'\n        : esc((c >= 0 ? '+' : '') + decimas(c) + ' %')}</div>\n    </td>`;\n  const maximo = Math.max(1, ...v.por_dia.map((d) => d.ingresos));\n  const raros = new Set(m.anomalias.map((a) => a.fecha));\n  const barras = v.por_dia.map((d) => {\n    const ancho = Math.max(1, Math.round((d.ingresos / maximo) * 100));\n    const fondo = raros.has(d.fecha) ? '#b3261e' : '#7a4b2a';\n    return `<tr>\n      <td style=\"padding:3px 8px 3px 0;font-size:13px;width:90px\">${esc(d.dia)} ${esc(ddmm(d.fecha))}</td>\n      <td style=\"padding:3px 0\"><div style=\"background:${fondo};height:14px;width:${ancho}%;border-radius:3px\"></div></td>\n      <td style=\"padding:3px 0 3px 8px;font-size:13px;text-align:right;width:110px\">${esc(soles(d.ingresos))}</td>\n    </tr>`;\n  }).join('');\n  const nota = resumen.origen === 'ia'\n    ? 'Redactado por IA y verificado: todas las cifras coinciden con los datos.'\n    : `Resumen automático (${esc(resumen.motivo)}).`;\n  const top = v.top.map((t) => `<tr>\n      <td style=\"padding:4px 0;font-size:13px\">${esc(t.producto)}</td>\n      <td style=\"padding:4px 0;font-size:13px;text-align:right\">${t.unidades} u.</td>\n      <td style=\"padding:4px 0;font-size:13px;text-align:right\">${esc(soles(t.ingresos))}</td></tr>`).join('');\n\n  return `<!doctype html><html lang=\"es\"><head><meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>Reporte semanal</title></head>\n<body style=\"margin:0;background:#f3f4f6;font-family:Arial,Helvetica,sans-serif;color:#1c2530\">\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\"><tr><td align=\"center\" style=\"padding:20px 12px\">\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:680px;background:#ffffff;border-radius:12px;padding:24px\">\n<tr><td>\n  <div style=\"font-size:12px;color:#6b7480;text-transform:uppercase;letter-spacing:.05em\">Reporte semanal · ${esc(NEGOCIO)}</div>\n  <h1 style=\"font-size:22px;margin:4px 0 16px\">Semana del ${esc(ddmm(m.semana.inicio))} al ${esc(ddmm(m.semana.fin))}</h1>\n  <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"6\"><tr>\n    ${kpi('Ventas', soles(v.ingresos), v.cambio_ingresos)}\n    ${kpi('Pedidos', String(v.pedidos), v.cambio_pedidos)}\n    ${kpi('Ticket promedio', soles(v.ticket), v.cambio_ticket)}\n    ${kpi('Publicidad', soles(pub.gasto), pub.cambio_gasto, true)}\n    ${kpi('Conversaciones', String(at.conversaciones), at.cambio)}\n  </tr></table>\n  <p style=\"font-size:11px;color:#6b7480;margin:4px 6px 18px\">En publicidad, el rojo indica que se gastó más que la semana anterior.</p>\n  <h2 style=\"font-size:15px;margin:0 0 8px\">Resumen</h2>\n  <p style=\"font-size:14px;line-height:1.5;margin:0 0 4px\">${esc(resumen.texto)}</p>\n  <p style=\"font-size:11px;color:#6b7480;margin:0 0 18px\">${nota}</p>\n  <h2 style=\"font-size:15px;margin:0 0 8px\">Lo que hay que saber</h2>\n  <ul style=\"font-size:14px;line-height:1.5;margin:0 0 18px;padding-left:20px\">\n    ${lista.map((h) => `<li style=\"margin-bottom:6px\">${esc(h)}</li>`).join('')}\n  </ul>\n  <h2 style=\"font-size:15px;margin:0 0 8px\">Ventas por día</h2>\n  <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin-bottom:18px\">${barras}</table>\n  <h2 style=\"font-size:15px;margin:0 0 8px\">Productos más vendidos</h2>\n  <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin-bottom:18px\">${top}</table>\n  <p style=\"font-size:11px;color:#6b7480;margin:0\">Generado automáticamente con n8n a partir de la tienda,\n  el bot de atención, las facturas y la publicidad. Semana del lunes al domingo.</p>\n</td></tr></table></td></tr></table></body></html>`;\n}\n\nfunction textoCorto(m, resumen) {\n  return `Reporte semanal ${ddmm(m.semana.inicio)}–${ddmm(m.semana.fin)} · ${NEGOCIO}\\n\\n` +\n    resumen.texto + '\\n\\nEl detalle completo llegó por correo.';\n}\n\n// ── Ejecución en n8n ──\n\nfunction desdeTabla(t) {\n  return t.filas.map((f) => Object.fromEntries(t.columnas.map((c, i) => [c, f[i]])));\n}\n\nfunction leerDatos() {\n  if (FUENTE === 'demo') {\n    return Object.fromEntries(Object.entries(DATOS_DEMO).map(([k, t]) => [k, desdeTabla(t)]));\n  }\n  const hoja = (nombre) => $(nombre).all().map((i) => i.json);\n  return {\n    ventas: hoja('Sheets · Ventas'),\n    publicidad: hoja('Sheets · Publicidad'),\n    conversaciones: hoja('Sheets · Conversaciones'),\n    facturas: hoja('Sheets · Facturas'),\n  };\n}\n\nif (MODO === 'metricas') {\n  // En la demo la fecha se puede pedir por la URL (?fecha=2026-09-14)\n  const query = FUENTE === 'demo' ? ($input.first().json.query || {}) : {};\n  const fechaRef = /^\\d{4}-\\d{2}-\\d{2}$/.test(query.fecha || '') ? query.fecha : $now.toISODate();\n  const m = calcular(leerDatos(), fechaRef);\n  const lista = hallazgos(m);\n  return [{ json: { metricas: m, hallazgos: lista, hechos: hechos(m, lista),\n                    texto_ia_demo: FUENTE === 'demo' ? (query.texto_ia ?? null) : null } }];\n}\n\n// MODO 'resumen': llega la salida de la IA (o su error) y se verifica\nconst base = $('Calcular métricas').first().json;\nconst entrada = $input.first().json;\nconst textoIa = FUENTE === 'demo' ? base.texto_ia_demo\n  : (typeof entrada.text === 'string' ? entrada.text : null);\nconst resumen = resumenFinal(textoIa, base.metricas, base.hallazgos);\nreturn [{ json: {\n  semana: base.metricas.semana,\n  resumen,\n  html: armarHtml(base.metricas, base.hallazgos, resumen),\n  telegram: textoCorto(base.metricas, resumen),\n  asunto: `Reporte semanal ${ddmm(base.metricas.semana.inicio)}–${ddmm(base.metricas.semana.fin)}: ` +\n    `${soles(base.metricas.ventas.ingresos)} en ventas`,\n  fila: {\n    semana: base.metricas.semana.inicio,\n    ventas: centesimas(base.metricas.ventas.ingresos),\n    pedidos: base.metricas.ventas.pedidos,\n    gasto_publicidad: centesimas(base.metricas.publicidad.gasto),\n    hallazgos: base.hallazgos.length,\n    resumen_por: resumen.origen,\n    motivo: resumen.motivo,\n  },\n} }];\n"
+      },
+      "id": "code-1",
+      "name": "Calcular métricas",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=DATOS:\n{{ $json.hechos }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "Eres el analista de un negocio pequeño. Escribe para el dueño un resumen de 3 a 5 oraciones, en español claro y sin tecnicismos.\nReglas:\n1. Usa SOLO las cifras de los DATOS, escritas exactamente igual (con S/, comas y %).\n2. No calcules cifras nuevas ni redondees. Si una cifra no está en los datos, no la escribas.\n3. Empieza por lo más importante y termina con una acción concreta para esta semana.\nUn sistema revisa cada número de tu texto: si alguno no está en los datos, tu texto se descarta."
+            }
+          ]
+        }
+      },
+      "id": "llm-1",
+      "name": "IA · Redactar resumen",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        1320,
+        300
+      ],
+      "onError": "continueErrorOutput",
+      "notes": "Si la IA falla o inventa una cifra, el reporte sale igual con un resumen automático."
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list"
+        },
+        "options": {
+          "temperature": 0.3,
+          "maxTokens": 400
+        }
+      },
+      "id": "llm-m",
+      "name": "Modelo de IA",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1320,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Nodos Code de n8n: \"Calcular métricas\" y \"Verificar y armar el reporte\".\n// Espejo en JavaScript de src/reporte.py (misma lógica, misma salida).\n// La paridad entre ambos la verifica tests/test_paridad_js.py.\n//\n// scripts/build_workflow.py fija los marcadores:\n//   MODO    'metricas' → lee las hojas y calcula;  'resumen' → verifica el texto\n//           de la IA y arma el correo\n//   FUENTE  'demo' (datos incluidos en el nodo) o 'sheets' (producción)\n//   DATOS_DEMO  data/*.csv comprimidos (solo en la demo)\n\nconst MODO = 'resumen';\nconst FUENTE = 'sheets';\nconst DATOS_DEMO = {};\n\nconst NEGOCIO = 'Tostaduría Selva Alta';\nconst DIAS = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];\nconst SEMANAS_HISTORIA = 8;\nconst UMBRAL_Z = 2;\nconst META_ROAS = 200;\nconst META_BOT = 700;\nconst CAMBIO_RELEVANTE = 100;\nconst ALZA_GASTO = 200;\nconst NUMERO = /\\d[\\d,]*(?:\\.\\d+)?/g;\n\n// ── números ──\n\nfunction centimos(v) {\n  const t = String(v === null || v === undefined ? '' : v).trim().replace(/,/g, '');\n  const m = t.match(/^(-?)(\\d+)(?:\\.(\\d{1,2}))?$/);\n  if (!m) return 0;\n  const valor = parseInt(m[2], 10) * 100 + parseInt((m[3] || '').padEnd(2, '0'), 10);\n  return m[1] ? -valor : valor;\n}\n\nfunction entero(v) {\n  const t = String(v === null || v === undefined ? '' : v).trim();\n  return /^-?\\d+$/.test(t) ? parseInt(t, 10) : 0;\n}\n\nfunction redondear(num, den) {\n  const signo = (num < 0) !== (den < 0) ? -1 : 1;\n  return signo * Math.floor((2 * Math.abs(num) + Math.abs(den)) / (2 * Math.abs(den)));\n}\n\nconst miles = (n) => String(n).replace(/\\B(?=(\\d{3})+(?!\\d))/g, ',');\n\nfunction soles(c) {\n  const signo = c < 0 ? '-' : '';\n  const a = Math.abs(c);\n  return `${signo}S/ ${miles(Math.floor(a / 100))}.${String(a % 100).padStart(2, '0')}`;\n}\n\nfunction decimas(d) {\n  const signo = d < 0 ? '-' : '';\n  return `${signo}${Math.floor(Math.abs(d) / 10)}.${Math.abs(d) % 10}`;\n}\n\nconst centesimas = (c) => `${Math.floor(c / 100)}.${String(c % 100).padStart(2, '0')}`;\n\nconst variacion = (actual, anterior) =>\n  anterior === 0 ? null : redondear((actual - anterior) * 1000, anterior);\n\n// ── fechas ──\n\nconst dia = (s) => Date.UTC(+s.slice(0, 4), +s.slice(5, 7) - 1, +s.slice(8, 10)) / 86400000;\nconst iso = (n) => new Date(n * 86400000).toISOString().slice(0, 10);\n\nfunction semanaAnterior(fechaRef) {\n  const d = dia(fechaRef);\n  const lunes = d - (new Date(d * 86400000).getUTCDay() + 6) % 7;\n  return [iso(lunes - 7), iso(lunes - 1)];\n}\n\nconst ddmm = (f) => `${f.slice(8, 10)}/${f.slice(5, 7)}`;\n\n// ── métricas ──\n\nfunction en(fila, ini, fin) {\n  const f = String(fila.fecha || '').slice(0, 10);\n  return ini <= f && f <= fin;\n}\n\nfunction resumenVentas(filas, ini, fin) {\n  const sel = filas.filter((f) => en(f, ini, fin));\n  const ingresos = sel.reduce((s, f) => s + centimos(f.subtotal), 0);\n  const pedidos = new Set(sel.map((f) => String(f.pedido_id))).size;\n  return { ingresos, pedidos, ticket: pedidos ? redondear(ingresos, pedidos) : 0 };\n}\n\nfunction ingresosPorDia(filas) {\n  const porDia = {};\n  for (const f of filas) {\n    const k = String(f.fecha || '').slice(0, 10);\n    porDia[k] = (porDia[k] || 0) + centimos(f.subtotal);\n  }\n  return porDia;\n}\n\nfunction calcular(datos, fechaRef) {\n  const [ini, fin] = semanaAnterior(fechaRef);\n  const [iniA, finA] = [iso(dia(ini) - 7), iso(dia(fin) - 7)];\n  const ventas = datos.ventas || [];\n\n  const actual = resumenVentas(ventas, ini, fin);\n  const anterior = resumenVentas(ventas, iniA, finA);\n  const porDia = ingresosPorDia(ventas);\n  const dias = DIAS.map((nombre, i) => ({\n    fecha: iso(dia(ini) + i), dia: nombre, ingresos: porDia[iso(dia(ini) + i)] || 0,\n  }));\n\n  const productos = {};\n  for (const f of ventas) {\n    if (!en(f, ini, fin)) continue;\n    const k = String(f.producto || f.sku || '?');\n    productos[k] = productos[k] || { ingresos: 0, unidades: 0 };\n    productos[k].ingresos += centimos(f.subtotal);\n    productos[k].unidades += entero(f.cantidad);\n  }\n  const top = Object.entries(productos)\n    .sort((a, b) => (b[1].ingresos - a[1].ingresos) || (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0))\n    .slice(0, 3)\n    .map(([producto, v]) => ({ producto, ingresos: v.ingresos, unidades: v.unidades }));\n\n  const pub = (datos.publicidad || []).filter((f) => en(f, ini, fin));\n  const pubA = (datos.publicidad || []).filter((f) => en(f, iniA, finA));\n  const gasto = pub.reduce((s, f) => s + centimos(f.gasto), 0);\n  const gastoA = pubA.reduce((s, f) => s + centimos(f.gasto), 0);\n\n  const conv = (datos.conversaciones || []).filter((f) => en(f, ini, fin));\n  const convA = (datos.conversaciones || []).filter((f) => en(f, iniA, finA));\n  const atendidas = conv.filter((f) => f.accion !== 'silencio');\n  const resueltas = atendidas.filter((f) => f.accion === 'responder' && f.intencion !== 'aclarar');\n\n  const fac = (datos.facturas || []).filter((f) => en(f, ini, fin));\n  const registradas = fac.filter((f) => f.estado === 'registrada');\n\n  return {\n    semana: { inicio: ini, fin },\n    ventas: Object.assign({}, actual, {\n      anterior,\n      cambio_ingresos: variacion(actual.ingresos, anterior.ingresos),\n      cambio_pedidos: variacion(actual.pedidos, anterior.pedidos),\n      cambio_ticket: variacion(actual.ticket, anterior.ticket),\n      por_dia: dias,\n      top,\n    }),\n    publicidad: {\n      gasto, cambio_gasto: variacion(gasto, gastoA),\n      clics: pub.reduce((s, f) => s + entero(f.clics), 0),\n      roas: gasto ? redondear(actual.ingresos * 100, gasto) : null,\n      costo_por_pedido: actual.pedidos ? redondear(gasto, actual.pedidos) : null,\n    },\n    atencion: {\n      conversaciones: conv.length, cambio: variacion(conv.length, convA.length),\n      resueltas_bot: resueltas.length,\n      tasa_bot: atendidas.length ? redondear(resueltas.length * 1000, atendidas.length) : null,\n      derivadas: conv.filter((f) => f.accion === 'derivar').length,\n      sin_respuesta: conv.filter((f) => f.intencion === 'aclarar').length,\n    },\n    facturas: {\n      registradas: registradas.length,\n      total: registradas.reduce((s, f) => s + centimos(f.total), 0),\n      revision: fac.filter((f) => f.estado === 'revision').length,\n    },\n    anomalias: anomalias(porDia, ini),\n  };\n}\n\nfunction anomalias(porDia, ini) {\n  const salida = [];\n  for (let i = 0; i < 7; i++) {\n    const d = dia(ini) + i;\n    const x = porDia[iso(d)] || 0;\n    const hist = [];\n    for (let k = 1; k <= SEMANAS_HISTORIA; k++) hist.push(porDia[iso(d - 7 * k)] || 0);\n    const n = hist.length;\n    const suma = hist.reduce((s, h) => s + h, 0);\n    const dispersion = n * hist.reduce((s, h) => s + h * h, 0) - suma * suma;\n    if (dispersion <= 0) continue;\n    const z = (x * n - suma) / Math.sqrt(dispersion);\n    if (Math.abs(z) >= UMBRAL_Z) {\n      salida.push({ fecha: iso(d), dia: DIAS[i], ingresos: x,\n                    promedio: redondear(suma, n), tipo: z < 0 ? 'baja' : 'alta' });\n    }\n  }\n  return salida;\n}\n\n// ── hallazgos y texto ──\n\nfunction cambioTexto(c) {\n  return c === null ? 'sin dato de la semana anterior'\n    : `${c >= 0 ? '+' : ''}${decimas(c)} % frente a la semana anterior`;\n}\n\nfunction hallazgos(m) {\n  const { ventas: v, publicidad: pub, atencion: at, facturas: fac } = m;\n  const out = [];\n  const c = v.cambio_ingresos;\n  if (c !== null && Math.abs(c) >= CAMBIO_RELEVANTE) {\n    out.push(`Las ventas ${c > 0 ? 'subieron' : 'bajaron'} ${decimas(Math.abs(c))} % ` +\n      `frente a la semana anterior (${soles(v.ingresos)} contra ${soles(v.anterior.ingresos)}).`);\n  }\n  for (const a of m.anomalias) {\n    const nivel = a.tipo === 'baja' ? 'por debajo' : 'por encima';\n    const extra = a.tipo === 'baja'\n      ? ' Conviene revisar si la web o los pagos tuvieron problemas ese día.' : '';\n    out.push(`El ${a.dia} ${ddmm(a.fecha)} se vendió ${soles(a.ingresos)}, muy ` +\n      `${nivel} de lo normal para un ${a.dia} (promedio ${soles(a.promedio)}).${extra}`);\n  }\n  const cg = pub.cambio_gasto;\n  if (cg !== null && cg >= ALZA_GASTO && (c === null || c <= 0)) {\n    out.push(`El gasto en publicidad subió ${decimas(cg)} % (${soles(pub.gasto)}), pero ` +\n      `las ventas no acompañaron (${cambioTexto(c)}). Conviene revisar qué campaña cambió.`);\n  }\n  if (pub.roas !== null && pub.roas < META_ROAS) {\n    out.push(`La publicidad devolvió ${centesimas(pub.roas)} soles en ventas por cada ` +\n      `sol invertido, por debajo de la meta de ${centesimas(META_ROAS)}.`);\n  }\n  if (at.tasa_bot !== null && at.tasa_bot < META_BOT) {\n    out.push(`El bot resolvió el ${decimas(at.tasa_bot)} % de las consultas, por debajo ` +\n      `de la meta de ${decimas(META_BOT)} %.`);\n  }\n  if (at.sin_respuesta >= 3) {\n    out.push(`${at.sin_respuesta} preguntas de clientes no encontraron respuesta en la ` +\n      'base del bot: conviene agregarlas a las preguntas frecuentes.');\n  }\n  if (fac.revision) {\n    const varias = fac.revision > 1;\n    out.push(`${fac.revision} factura${varias ? 's' : ''} de proveedores ` +\n      `${varias ? 'esperan' : 'espera'} revisión.`);\n  }\n  if (v.top.length) {\n    const t = v.top[0];\n    out.push(`El producto que más vendió fue ${t.producto}: ${soles(t.ingresos)} ` +\n      `en ${t.unidades} unidades.`);\n  }\n  return out;\n}\n\nfunction hechos(m, lista) {\n  const { ventas: v, publicidad: pub, atencion: at, facturas: fac } = m;\n  const lineas = [\n    `Semana: del ${ddmm(m.semana.inicio)} al ${ddmm(m.semana.fin)}`,\n    `Ventas: ${soles(v.ingresos)} (${cambioTexto(v.cambio_ingresos)})`,\n    `Pedidos: ${v.pedidos} (${cambioTexto(v.cambio_pedidos)})`,\n    `Ticket promedio: ${soles(v.ticket)} (${cambioTexto(v.cambio_ticket)})`,\n    `Gasto en publicidad: ${soles(pub.gasto)} (${cambioTexto(pub.cambio_gasto)})`,\n  ];\n  if (pub.roas !== null) lineas.push(`Ventas por sol invertido en publicidad: ${centesimas(pub.roas)}`);\n  if (pub.costo_por_pedido !== null) lineas.push(`Costo de publicidad por pedido: ${soles(pub.costo_por_pedido)}`);\n  lineas.push(`Conversaciones con clientes: ${at.conversaciones} (${cambioTexto(at.cambio)})`);\n  if (at.tasa_bot !== null) lineas.push(`Resueltas por el bot: ${at.resueltas_bot} (${decimas(at.tasa_bot)} %)`);\n  lineas.push(`Derivadas a una persona: ${at.derivadas}`);\n  lineas.push(`Facturas registradas: ${fac.registradas} por ${soles(fac.total)}; ` +\n    `en revisión: ${fac.revision}`);\n  lineas.push('Hallazgos:');\n  for (const h of lista) lineas.push(`- ${h}`);\n  return lineas.join('\\n');\n}\n\nfunction plantilla(m, lista) {\n  const v = m.ventas;\n  const inicio = `Semana del ${ddmm(m.semana.inicio)} al ${ddmm(m.semana.fin)}: ` +\n    `ventas de ${soles(v.ingresos)} en ${v.pedidos} pedidos.`;\n  return [inicio].concat(lista.slice(0, 3)).join(' ');\n}\n\n// ── verificación del texto de la IA ──\n\nfunction normalizarNumero(n) {\n  const s = n.replace(/,/g, '');\n  const punto = s.indexOf('.');\n  let entera = punto === -1 ? s : s.slice(0, punto);\n  let dec = punto === -1 ? '' : s.slice(punto + 1);\n  entera = entera.replace(/^0+/, '') || '0';\n  dec = dec.replace(/0+$/, '');\n  return dec ? `${entera}.${dec}` : entera;\n}\n\nfunction verificar(texto, base) {\n  const permitidas = new Set((base.match(NUMERO) || []).map(normalizarNumero));\n  for (let i = 0; i <= 10; i++) permitidas.add(String(i));\n  const ajenas = [];\n  for (const n of ((texto || '').match(NUMERO) || [])) {\n    if (!permitidas.has(normalizarNumero(n)) && !ajenas.includes(n)) ajenas.push(n);\n  }\n  return { ok: Boolean((texto || '').trim()) && !ajenas.length, cifras_ajenas: ajenas };\n}\n\nfunction resumenFinal(textoIa, m, lista) {\n  const base = hechos(m, lista);\n  if (textoIa === null || textoIa === undefined) {\n    return { texto: plantilla(m, lista), origen: 'plantilla',\n             motivo: 'la IA no respondió', cifras_ajenas: [] };\n  }\n  const v = verificar(textoIa, base);\n  if (v.ok) return { texto: textoIa.trim(), origen: 'ia', motivo: '', cifras_ajenas: [] };\n  const motivo = !v.cifras_ajenas.length ? 'la IA devolvió un texto vacío'\n    : 'la IA mencionó cifras que no están en los datos: ' + v.cifras_ajenas.join(', ');\n  return { texto: plantilla(m, lista), origen: 'plantilla', motivo, cifras_ajenas: v.cifras_ajenas };\n}\n\n// ── correo HTML (tablas y estilos en línea: es lo que entienden los clientes de correo) ──\n\nconst esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')\n  .replace(/>/g, '&gt;').replace(/\"/g, '&quot;');\n\nfunction armarHtml(m, lista, resumen) {\n  const { ventas: v, publicidad: pub, atencion: at } = m;\n  // invertir: en publicidad, gastar más es la mala noticia\n  const color = (c, invertir) => c === null || c === 0 ? '#6b7480'\n    : (c > 0) !== invertir ? '#1f8a4c' : '#b3261e';\n  const kpi = (titulo, valor, c, invertir = false) => `\n    <td style=\"padding:12px;border:1px solid #e3e6ea;border-radius:8px;width:20%;vertical-align:top\">\n      <div style=\"font-size:12px;color:#6b7480\">${esc(titulo)}</div>\n      <div style=\"font-size:20px;font-weight:700;margin:4px 0\">${esc(valor)}</div>\n      <div style=\"font-size:12px;color:${color(c, invertir)}\">${c === null ? 'sin dato previo'\n        : esc((c >= 0 ? '+' : '') + decimas(c) + ' %')}</div>\n    </td>`;\n  const maximo = Math.max(1, ...v.por_dia.map((d) => d.ingresos));\n  const raros = new Set(m.anomalias.map((a) => a.fecha));\n  const barras = v.por_dia.map((d) => {\n    const ancho = Math.max(1, Math.round((d.ingresos / maximo) * 100));\n    const fondo = raros.has(d.fecha) ? '#b3261e' : '#7a4b2a';\n    return `<tr>\n      <td style=\"padding:3px 8px 3px 0;font-size:13px;width:90px\">${esc(d.dia)} ${esc(ddmm(d.fecha))}</td>\n      <td style=\"padding:3px 0\"><div style=\"background:${fondo};height:14px;width:${ancho}%;border-radius:3px\"></div></td>\n      <td style=\"padding:3px 0 3px 8px;font-size:13px;text-align:right;width:110px\">${esc(soles(d.ingresos))}</td>\n    </tr>`;\n  }).join('');\n  const nota = resumen.origen === 'ia'\n    ? 'Redactado por IA y verificado: todas las cifras coinciden con los datos.'\n    : `Resumen automático (${esc(resumen.motivo)}).`;\n  const top = v.top.map((t) => `<tr>\n      <td style=\"padding:4px 0;font-size:13px\">${esc(t.producto)}</td>\n      <td style=\"padding:4px 0;font-size:13px;text-align:right\">${t.unidades} u.</td>\n      <td style=\"padding:4px 0;font-size:13px;text-align:right\">${esc(soles(t.ingresos))}</td></tr>`).join('');\n\n  return `<!doctype html><html lang=\"es\"><head><meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>Reporte semanal</title></head>\n<body style=\"margin:0;background:#f3f4f6;font-family:Arial,Helvetica,sans-serif;color:#1c2530\">\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\"><tr><td align=\"center\" style=\"padding:20px 12px\">\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:680px;background:#ffffff;border-radius:12px;padding:24px\">\n<tr><td>\n  <div style=\"font-size:12px;color:#6b7480;text-transform:uppercase;letter-spacing:.05em\">Reporte semanal · ${esc(NEGOCIO)}</div>\n  <h1 style=\"font-size:22px;margin:4px 0 16px\">Semana del ${esc(ddmm(m.semana.inicio))} al ${esc(ddmm(m.semana.fin))}</h1>\n  <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"6\"><tr>\n    ${kpi('Ventas', soles(v.ingresos), v.cambio_ingresos)}\n    ${kpi('Pedidos', String(v.pedidos), v.cambio_pedidos)}\n    ${kpi('Ticket promedio', soles(v.ticket), v.cambio_ticket)}\n    ${kpi('Publicidad', soles(pub.gasto), pub.cambio_gasto, true)}\n    ${kpi('Conversaciones', String(at.conversaciones), at.cambio)}\n  </tr></table>\n  <p style=\"font-size:11px;color:#6b7480;margin:4px 6px 18px\">En publicidad, el rojo indica que se gastó más que la semana anterior.</p>\n  <h2 style=\"font-size:15px;margin:0 0 8px\">Resumen</h2>\n  <p style=\"font-size:14px;line-height:1.5;margin:0 0 4px\">${esc(resumen.texto)}</p>\n  <p style=\"font-size:11px;color:#6b7480;margin:0 0 18px\">${nota}</p>\n  <h2 style=\"font-size:15px;margin:0 0 8px\">Lo que hay que saber</h2>\n  <ul style=\"font-size:14px;line-height:1.5;margin:0 0 18px;padding-left:20px\">\n    ${lista.map((h) => `<li style=\"margin-bottom:6px\">${esc(h)}</li>`).join('')}\n  </ul>\n  <h2 style=\"font-size:15px;margin:0 0 8px\">Ventas por día</h2>\n  <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin-bottom:18px\">${barras}</table>\n  <h2 style=\"font-size:15px;margin:0 0 8px\">Productos más vendidos</h2>\n  <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin-bottom:18px\">${top}</table>\n  <p style=\"font-size:11px;color:#6b7480;margin:0\">Generado automáticamente con n8n a partir de la tienda,\n  el bot de atención, las facturas y la publicidad. Semana del lunes al domingo.</p>\n</td></tr></table></td></tr></table></body></html>`;\n}\n\nfunction textoCorto(m, resumen) {\n  return `Reporte semanal ${ddmm(m.semana.inicio)}–${ddmm(m.semana.fin)} · ${NEGOCIO}\\n\\n` +\n    resumen.texto + '\\n\\nEl detalle completo llegó por correo.';\n}\n\n// ── Ejecución en n8n ──\n\nfunction desdeTabla(t) {\n  return t.filas.map((f) => Object.fromEntries(t.columnas.map((c, i) => [c, f[i]])));\n}\n\nfunction leerDatos() {\n  if (FUENTE === 'demo') {\n    return Object.fromEntries(Object.entries(DATOS_DEMO).map(([k, t]) => [k, desdeTabla(t)]));\n  }\n  const hoja = (nombre) => $(nombre).all().map((i) => i.json);\n  return {\n    ventas: hoja('Sheets · Ventas'),\n    publicidad: hoja('Sheets · Publicidad'),\n    conversaciones: hoja('Sheets · Conversaciones'),\n    facturas: hoja('Sheets · Facturas'),\n  };\n}\n\nif (MODO === 'metricas') {\n  // En la demo la fecha se puede pedir por la URL (?fecha=2026-09-14)\n  const query = FUENTE === 'demo' ? ($input.first().json.query || {}) : {};\n  const fechaRef = /^\\d{4}-\\d{2}-\\d{2}$/.test(query.fecha || '') ? query.fecha : $now.toISODate();\n  const m = calcular(leerDatos(), fechaRef);\n  const lista = hallazgos(m);\n  return [{ json: { metricas: m, hallazgos: lista, hechos: hechos(m, lista),\n                    texto_ia_demo: FUENTE === 'demo' ? (query.texto_ia ?? null) : null } }];\n}\n\n// MODO 'resumen': llega la salida de la IA (o su error) y se verifica\nconst base = $('Calcular métricas').first().json;\nconst entrada = $input.first().json;\nconst textoIa = FUENTE === 'demo' ? base.texto_ia_demo\n  : (typeof entrada.text === 'string' ? entrada.text : null);\nconst resumen = resumenFinal(textoIa, base.metricas, base.hallazgos);\nreturn [{ json: {\n  semana: base.metricas.semana,\n  resumen,\n  html: armarHtml(base.metricas, base.hallazgos, resumen),\n  telegram: textoCorto(base.metricas, resumen),\n  asunto: `Reporte semanal ${ddmm(base.metricas.semana.inicio)}–${ddmm(base.metricas.semana.fin)}: ` +\n    `${soles(base.metricas.ventas.ingresos)} en ventas`,\n  fila: {\n    semana: base.metricas.semana.inicio,\n    ventas: centesimas(base.metricas.ventas.ingresos),\n    pedidos: base.metricas.ventas.pedidos,\n    gasto_publicidad: centesimas(base.metricas.publicidad.gasto),\n    hallazgos: base.hallazgos.length,\n    resumen_por: resumen.origen,\n    motivo: resumen.motivo,\n  },\n} }];\n"
+      },
+      "id": "code-2",
+      "name": "Verificar y armar el reporte",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1540,
+        300
+      ],
+      "notes": "Cada número del texto de la IA debe existir en los datos."
+    },
+    {
+      "parameters": {
+        "sendTo": "REEMPLAZAR_CORREO_DUENO",
+        "subject": "={{ $json.asunto }}",
+        "emailType": "html",
+        "message": "={{ $json.html }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "gm-1",
+      "name": "Gmail · Enviar reporte",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1780,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "REEMPLAZAR_CHAT_EQUIPO",
+        "text": "={{ $json.telegram }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "id": "tg-1",
+      "name": "Telegram · Resumen corto",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1780,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ JSON.stringify($json.fila) }}",
+        "options": {}
+      },
+      "id": "set-h",
+      "name": "Fila de historial",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1780,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "REEMPLAZAR_ID_HOJA",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Historial",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {}
+        },
+        "options": {}
+      },
+      "id": "gs-h",
+      "name": "Sheets · Historial de reportes",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2000,
+        460
+      ]
+    }
+  ],
+  "connections": {
+    "Lunes 8:00": {
+      "main": [
+        [
+          {
+            "node": "Sheets · Ventas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheets · Ventas": {
+      "main": [
+        [
+          {
+            "node": "Sheets · Publicidad",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheets · Publicidad": {
+      "main": [
+        [
+          {
+            "node": "Sheets · Conversaciones",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheets · Conversaciones": {
+      "main": [
+        [
+          {
+            "node": "Sheets · Facturas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheets · Facturas": {
+      "main": [
+        [
+          {
+            "node": "Calcular métricas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calcular métricas": {
+      "main": [
+        [
+          {
+            "node": "IA · Redactar resumen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Modelo de IA": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "IA · Redactar resumen",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IA · Redactar resumen": {
+      "main": [
+        [
+          {
+            "node": "Verificar y armar el reporte",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Verificar y armar el reporte",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar y armar el reporte": {
+      "main": [
+        [
+          {
+            "node": "Gmail · Enviar reporte",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Telegram · Resumen corto",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fila de historial",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fila de historial": {
+      "main": [
+        [
+          {
+            "node": "Sheets · Historial de reportes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "meta": {
+    "instanceId": "reporte-prod"
+  },
+  "tags": []
+}
