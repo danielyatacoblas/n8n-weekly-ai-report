@@ -45,6 +45,72 @@ Es la pieza que conecta el resto del portafolio: lee las hojas que llenan el [bo
 
 ---
 
+## El workflow en n8n
+
+<p align="center"><img src="docs/workflow_n8n.png" alt="Workflow de producción abierto en el editor de n8n" width="900"></p>
+
+<p align="center"><i>Captura del editor de n8n 2.40 con <code>workflows/reporte_produccion.json</code> importado.
+Los triángulos rojos solo indican credenciales por conectar (Google, Telegram, IA).</i></p>
+
+### Paso a paso: cómo una cifra inventada por la IA no llega al dueño
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant S as Schedule (lunes 8:00)
+    participant H as 4 hojas de Sheets
+    participant M as Code · Calcular métricas
+    participant IA as Basic LLM Chain
+    participant V as Code · Verificar y armar
+    participant D as Dueño (Gmail + Telegram)
+    S->>H: leer ventas, publicidad, conversaciones, facturas
+    H->>M: filas de 10 semanas
+    M->>M: semana vs. anterior, puntaje z por día, hallazgos por reglas
+    M->>IA: bloque de DATOS con cifras ya formateadas
+    IA->>V: "Las ventas bajaron 12 % hasta S/ 7,900"
+    V->>V: extraer números → 7,900 no está en los DATOS
+    V->>V: descartar el texto, usar el resumen por reglas
+    V->>D: correo HTML: resumen automático + motivo del descarte
+```
+
+### Técnicas de n8n que usa
+
+**Reporte semanal · producción** · 13 nodos
+
+| Técnica de n8n | Para qué se usa aquí |
+| --- | --- |
+| Schedule Trigger con cron | el flujo corre solo, sin que nadie lo dispare |
+| Execute Once | lee una hoja completa una sola vez aunque lleguen varios items |
+| Always Output Data | una hoja vacía no corta el flujo |
+| Lectura de otros nodos por nombre ($('Nodo')) | usa datos de pasos anteriores aunque $input traiga otra cosa |
+| Salida de error del nodo (On Error → error output) | si un servicio falla, el flujo sigue por otra rama |
+| Nodos de IA de n8n (LangChain) | la IA es un paso del flujo, con su modelo conectado aparte |
+| Modelo de IA como sub-nodo intercambiable | se cambia de proveedor sin tocar el resto del flujo |
+
+<details><summary>Nodo por nodo</summary>
+
+| Nodo | Tipo | Configuración |
+| --- | --- | --- |
+| Lunes 8:00 | Schedule Trigger | cron `0 8 * * 1`. Usa la zona horaria de n8n (GENERIC_TIMEZONE=America/Lima). |
+| Sheets · Ventas | Google Sheets | pestaña `Ventas`, Execute Once, Always Output Data |
+| Sheets · Publicidad | Google Sheets | pestaña `Publicidad`, Execute Once, Always Output Data |
+| Sheets · Conversaciones | Google Sheets | pestaña `Conversaciones`, Execute Once, Always Output Data |
+| Sheets · Facturas | Google Sheets | pestaña `Facturas`, Execute Once, Always Output Data |
+| Calcular métricas | Code (JavaScript) | 428 líneas generadas desde `workflows/src/` |
+| IA · Redactar resumen | Basic LLM Chain | salida de error. Si la IA falla o inventa una cifra, el reporte sale igual con un resumen automático. |
+| Modelo de IA | OpenAI Chat Model | — |
+| Verificar y armar el reporte | Code (JavaScript) | 428 líneas generadas desde `workflows/src/`. Cada número del texto de la IA debe existir en los datos. |
+| Gmail · Enviar reporte | Gmail | — |
+| Telegram · Resumen corto | Telegram | — |
+| Fila de historial | Edit Fields (Set) | — |
+| Sheets · Historial de reportes | Google Sheets | operación `append`, pestaña `Historial` |
+
+</details>
+
+<sub>Tablas generadas del JSON del workflow con <code>python scripts/documentar_workflow.py workflows/reporte_produccion.json</code>.</sub>
+
+---
+
 ## Demo
 
 <!-- VIDEO: arrastra aquí el .mp4 al editar el README en GitHub y deja solo la URL que genera. -->
@@ -223,9 +289,31 @@ gitGraph
    commit id: "feat: draw the Git Flow history as a Mermaid ..."
    checkout develop
    merge feature/diagrama-git
+   branch docs/diagrama-git-flow
+   checkout docs/diagrama-git-flow
+   commit id: "docs: show the branch history as a gitGraph i..."
+   checkout develop
+   merge docs/diagrama-git-flow
+   branch release/v1.1.1
+   checkout release/v1.1.1
+   commit id: "chore(release): prepare v1.1.1"
+   checkout main
+   merge release/v1.1.1 tag: "v1.1.1"
+   checkout develop
+   merge release/v1.1.1
+   branch feature/canvas-ordenado
+   checkout feature/canvas-ordenado
+   commit id: "feat: lay out the canvas from the workflow co..."
+   checkout develop
+   merge feature/canvas-ordenado
+   branch feature/documentar-workflow
+   checkout feature/documentar-workflow
+   commit id: "feat: document the n8n techniques each workfl..."
+   checkout develop
+   merge feature/documentar-workflow
 ```
 
-<p align="center"><i>Historial real del repositorio hasta v1.1.0, generado con
+<p align="center"><i>Historial real del repositorio, generado con
 <code>python scripts/diagrama_git.py</code>.</i></p>
 
 | Rama | Para qué |

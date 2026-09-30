@@ -29,7 +29,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        240,
+        280,
         0
       ],
       "notes": "Trae incluidas 10 semanas de datos ficticios."
@@ -43,7 +43,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        480,
+        560,
         0
       ]
     },
@@ -67,7 +67,7 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
       "position": [
-        720,
+        840,
         0
       ]
     }

@@ -19,7 +19,7 @@
       "typeVersion": 1.2,
       "position": [
         0,
-        300
+        0
       ],
       "notes": "Usa la zona horaria de n8n (GENERIC_TIMEZONE=America/Lima)."
     },
@@ -42,8 +42,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        220,
-        300
+        280,
+        0
       ],
       "executeOnce": true,
       "alwaysOutputData": true
@@ -67,8 +67,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        440,
-        300
+        560,
+        0
       ],
       "executeOnce": true,
       "alwaysOutputData": true
@@ -92,8 +92,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        660,
-        300
+        840,
+        0
       ],
       "executeOnce": true,
       "alwaysOutputData": true
@@ -117,8 +117,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        880,
-        300
+        1120,
+        0
       ],
       "executeOnce": true,
       "alwaysOutputData": true
@@ -132,8 +132,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1100,
-        300
+        1400,
+        0
       ]
     },
     {
@@ -153,8 +153,8 @@
       "type": "@n8n/n8n-nodes-langchain.chainLlm",
       "typeVersion": 1.7,
       "position": [
-        1320,
-        300
+        1680,
+        0
       ],
       "onError": "continueErrorOutput",
       "notes": "Si la IA falla o inventa una cifra, el reporte sale igual con un resumen automático."
@@ -176,8 +176,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        1320,
-        500
+        1680,
+        200
       ]
     },
     {
@@ -189,8 +189,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1540,
-        300
+        2100,
+        0
       ],
       "notes": "Cada número del texto de la IA debe existir en los datos."
     },
@@ -209,8 +209,8 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        1780,
-        140
+        2380,
+        0
       ]
     },
     {
@@ -226,8 +226,8 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        1780,
-        300
+        2380,
+        200
       ]
     },
     {
@@ -241,8 +241,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1780,
-        460
+        2380,
+        400
       ]
     },
     {
@@ -269,8 +269,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        2000,
-        460
+        2660,
+        400
       ]
     }
   ],
