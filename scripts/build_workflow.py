@@ -20,6 +20,8 @@ from pathlib import Path
 if sys.stdout and hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
+from diseno_canvas import acomodar  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 JS = ROOT / "workflows" / "src" / "reporte.js"
 DATA = ROOT / "data"
@@ -69,6 +71,7 @@ def _link(*destinos, tipo="main"):
     return [{"node": d, "type": tipo, "index": 0} for d in destinos]
 
 
+@acomodar
 def build_demo() -> dict:
     nodes = [
         _node("wh-1", "Webhook · Ver reporte", "n8n-nodes-base.webhook", 2, [0, 0],
@@ -106,6 +109,7 @@ def _hoja(nid, nombre, pestana, pos):
                  {"executeOnce": True, "alwaysOutputData": True})
 
 
+@acomodar
 def build_prod() -> dict:
     nodes = [
         _node("cron-1", "Lunes 8:00", "n8n-nodes-base.scheduleTrigger", 1.2, [0, 300],
